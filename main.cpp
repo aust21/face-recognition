@@ -1,10 +1,15 @@
 #include <iostream>
 #include <opencv4/opencv2/opencv.hpp>
 
-using namespace std;
-
 int main()
 {
-    cout << "Hello opencv!" << endl;
-    return 0;
+    int cameraNumber{0};
+
+    cv::VideoCapture cam;
+    cam.open(cameraNumber, cv::CAP_V4L2);
+
+    if (!cam.isOpened()) {
+        std::cout << "Error opening camera" << std::endl;
+        exit(1);
+    }
 }
