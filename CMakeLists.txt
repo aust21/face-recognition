@@ -7,9 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(OpenCV REQUIRED)
 
-add_executable(face-recognition main.cpp
+add_executable(face-recognition
     readme.md
-    .gitignore)
+    .gitignore
+    src/main.cpp
+)
 
 target_include_directories(face-recognition PRIVATE ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(face-recognition PRIVATE ${OpenCV_LIBS})
