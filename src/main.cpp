@@ -1,9 +1,12 @@
 #include <iostream>
 #include <opencv4/opencv2/opencv.hpp>
+#include <vector>
 
 int main()
 {
     int cameraNumber{0};
+    cv::CascadeClassifier classifier;
+    classifier.load("resources/face_data.xml");
 
     cv::VideoCapture cam;
     cam.open(cameraNumber, cv::CAP_V4L2);
@@ -20,9 +23,12 @@ int main()
             std::cerr << "Error reading frame" << std::endl;
             exit(1);
         }
-        cv::Mat flipped_output;
-        cv::flip(frame, flipped_output, 1);
-        cv::imshow("Cam", flipped_output);
+
+        std::vector<cv::Rect> faces;
+        cv::Mat greyFaces;
+        cv::cvtColor(frame, greyFaces, cv::COLOR_BGR2GRAY);
+
+        cv::imshow("Cam", greyFaces);
 
         char keypress = cv::waitKey(1);
         if (keypress == 27)
