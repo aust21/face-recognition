@@ -12,6 +12,7 @@ add_executable(face-recognition
     .gitignore
     src/main.cpp
     resources/face_data.xml
+
 )
 
 target_include_directories(face-recognition PRIVATE ${OpenCV_INCLUDE_DIRS})
