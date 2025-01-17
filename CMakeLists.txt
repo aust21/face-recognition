@@ -9,11 +9,11 @@ find_package(OpenCV REQUIRED)
 
 add_executable(face-recognition
     readme.md
-    .gitignore
+
     src/main.cpp
     resources/face_data.xml
-    Dockerfile
-    .dockerignore
+
+
 
 )
 

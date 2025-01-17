@@ -1,0 +1,7 @@
+/home/austin/projects/face-recognition/build/CMakeFiles/face-recognition.dir
+/home/austin/projects/face-recognition/build/CMakeFiles/edit_cache.dir
+/home/austin/projects/face-recognition/build/CMakeFiles/rebuild_cache.dir
+/home/austin/projects/face-recognition/build/CMakeFiles/list_install_components.dir
+/home/austin/projects/face-recognition/build/CMakeFiles/install.dir
+/home/austin/projects/face-recognition/build/CMakeFiles/install/local.dir
+/home/austin/projects/face-recognition/build/CMakeFiles/install/strip.dir
