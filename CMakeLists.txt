@@ -9,13 +9,9 @@ find_package(OpenCV REQUIRED)
 
 add_executable(face-recognition
     readme.md
-
     src/main.cpp
     resources/face_data.xml
     .gitignore
-
-
-
 )
 
 target_include_directories(face-recognition PRIVATE ${OpenCV_INCLUDE_DIRS})
