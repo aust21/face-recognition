@@ -1,27 +1,33 @@
-# Use an official base image with OpenCV pre-installed
-FROM ubuntu:22.04
+FROM debian:bullseye
 
-# Set up environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install necessary packages
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     libopencv-dev \
     pkg-config \
+    v4l-utils \
+    libv4l-dev \
+    udev \
+    libglib2.0-0 \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
     && apt-get clean
 
-# Create a working directory
 WORKDIR /app
-
-# Copy the entire project to the container
 COPY . /app
 
-# Compile the program
-RUN mkdir build && cd build && \
+RUN rm -rf build && mkdir build && cd build && \
     cmake .. && \
     make
 
-# Set the entry point to run the program
-ENTRYPOINT ["./build/Desktop_Qt_6_8_1-Debug/face-recognition"]
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && \
+    adduser appuser video && \
+    chown -R appuser /app
+
+USER appuser
+
+ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libv4l/v4l1compat.so
+
+ENTRYPOINT ["./build/face-recognition"]

@@ -13,11 +13,14 @@ add_executable(face-recognition
     src/main.cpp
     resources/face_data.xml
     Dockerfile
+    .dockerignore
 
 )
 
 target_include_directories(face-recognition PRIVATE ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(face-recognition PRIVATE ${OpenCV_LIBS})
+file(COPY ${CMAKE_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR})
+
 
 include(GNUInstallDirs)
 install(TARGETS face-recognition
