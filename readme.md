@@ -35,11 +35,15 @@ cd face-recognition
 
 ### Step 3: Build the Project
 
-Run the following commands to build the project:
+Create build folder if it doesn't exist:
 
 ```bash
-cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake
-cmake --build .
+mkdir build && cd build
+```
+
+Build the application
+```bash
+make
 ```
 
 ### Step 4: Run the Application
