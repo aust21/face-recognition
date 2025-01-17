@@ -12,6 +12,7 @@ add_executable(face-recognition
 
     src/main.cpp
     resources/face_data.xml
+    .gitignore
 
 
 
