@@ -56,7 +56,8 @@ Run the generated executable:
 ## Usage
 1. Prepare a live video feed (default cam).
 2. Sit in good lighting.
-2. Position a face in view of the camera.
+3. Position a face in view of the camera.
+4. To quit the application press the escape key
 
 ## Acknowledgments
 - [OpenCV](https://opencv.org/)

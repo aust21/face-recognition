@@ -6,7 +6,7 @@ int main()
 {
     int cameraNumber{0};
     cv::CascadeClassifier classifier;
-    classifier.load("resources/face_data.xml");
+    classifier.load(std::string(RESOURCE_DIR) + "/face_data.xml");
 
     cv::VideoCapture cam;
     cam.open(cameraNumber, cv::CAP_V4L2);
